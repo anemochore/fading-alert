@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FadingAlert Demo</title>
+</head>
+<body>
+
+<button onclick="alert.log('Hello world')">log</button>
+<button onclick="alert.spin('Loading...')">spin</button>
+<button onclick="alert.log()">fade out</button>
+
+<script src="../src/fading-alert.js"></script>
+<script>
+  const alert = new FadingAlert();
+</script>
+
+</body>
+</html>
