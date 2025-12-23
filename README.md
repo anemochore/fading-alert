@@ -46,6 +46,20 @@ Basic usage:
 
 ---
 
+## 🎬 Demo (GIF)
+
+Basic usage example:
+
+![FadingAlert demo](demo/Animation.gif)
+
+This demo shows:
+
+- log("Hello") displaying a toast
+- spin("Loading") with animated spinner
+- log() triggering fade-out
+
+---
+
 ## ⚙️ Custom Style
 
 You can override styles via constructor options:
