@@ -23,7 +23,7 @@ A tiny, dependency-free toast / spinner alert for vanilla JavaScript
 Include the script in your HTML:
 
 ```html
-<script src="https://anemochore.github.io/fading-alert/fading-alert.js"></script>
+<script src="https://anemochore.github.io/fading-alert/src/fading-alert.js"></script>
 ```
 
 ---
@@ -60,4 +60,4 @@ You can override styles via constructor options:
 
 ## 🧪 Demo
 
-Open `demo/index.html` in your browser to see a live demo.
+Open [`demo/index.html`](https://anemochore.github.io/fading-alert/demo/index.html) in your browser to see a live demo.
