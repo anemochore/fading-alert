@@ -3,17 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <title>FadingAlert Demo</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 40px;
+    }
+
+    button {
+      margin-right: 8px;
+      padding: 6px 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
+  <h1>FadingAlert Demo</h1>
+  <p>
+    This page demonstrates the basic behavior of <b>FadingAlert</b>.
+  </p>
 
-<button onclick="alert.log('Hello world')">log</button>
-<button onclick="alert.spin('Loading...')">spin</button>
-<button onclick="alert.log()">fade out</button>
+  <div>
+    <button id="btn-log">log("Hello")</button>
+    <button id="btn-spin">spin("Loading")</button>
+    <button id="btn-fade">log()</button>
+  </div>
 
-<script src="../src/fading-alert.js"></script>
-<script>
-  const alert = new FadingAlert();
-</script>
+  <!-- FadingAlert source -->
+  <script src="../src/fading-alert.js"></script>
 
+  <script>
+    const alert = new FadingAlert();
+
+    // ---- buttons (manual testing) ----
+    document.getElementById('btn-log').onclick = () => {
+      alert.log('Hello');
+    };
+
+    document.getElementById('btn-spin').onclick = () => {
+      alert.spin('Loading');
+    };
+
+    document.getElementById('btn-fade').onclick = () => {
+      alert.log();
+    };
+
+    // ---- automatic demo sequence (for GIF recording) ----
+    async function runDemo() {
+      // 1. log("Hello")
+      alert.log('Hello');
+      await wait(1200);
+
+      // 2. spin("Loading")
+      alert.spin('Loading');
+      await wait(2000);
+
+      // 3. log() -> fade out
+      alert.log();
+      await wait(1500);
+
+      // 4. spin() again (cancel fade-out)
+      alert.spin('Still working');
+      await wait(2000);
+
+      // 5. hint for click-to-dismiss
+      alert.log('Click me to dismiss');
+    }
+
+    function wait(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    // start automatically (slight delay so page looks clean)
+    setTimeout(runDemo, 500);
+  </script>
 </body>
 </html>
