@@ -35,7 +35,9 @@ class FadingAlert {
     s.color ||= 'black';
     s.backgroundColor ||= 'pink';
     s.border ||= '0';
-    s.overflow ||= 'auto';
+    s.overflow = 'hidden';
+    s.wordBreak ||= 'break-word';
+    s.whiteSpace ||= 'normal';
 
     this.div.addEventListener('click', () => {
       this.fadeOut();
@@ -113,11 +115,10 @@ class FadingAlert {
     this.div.style.pointerEvents = 'none';
 
     const onEnd = (e) => {
-      if (e.propertyName !== 'opacity') return;
       this.textEl.textContent = '';
-      this.div.removeEventListener('transitionend', onEnd);
+      this.div.style.transition = '';
     };
 
-    this.div.addEventListener('transitionend', onEnd);
+    this.div.addEventListener('transitionend', onEnd, { once: true });
   }
 }
