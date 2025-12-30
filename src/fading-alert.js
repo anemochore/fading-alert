@@ -37,7 +37,7 @@ class FadingAlert {
     s.border ||= '0';
     s.overflow = 'hidden';
     s.wordBreak ||= 'break-word';
-    s.whiteSpace ||= 'normal';
+    s.whiteSpace ||= 'pre-line';
 
     this.div.addEventListener('click', () => {
       this.fadeOut();
