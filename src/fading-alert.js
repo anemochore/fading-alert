@@ -57,7 +57,7 @@ class FadingAlert {
     if (txt.length === 0 || !txt[0]) {
       if (this.div.style.opacity == 1) this.fadeOut();
     } else {
-      this.textEl.textContent = txt.join(' ');
+      this.textEl.textContent = txt.join(txt[0].endsWith('\n') ? '' : ' ');
       this.div.style.transition = '';
       this.div.style.opacity = 1;
       this.div.style.pointerEvents = 'auto';
