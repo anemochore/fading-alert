@@ -73,6 +73,10 @@ class FadingAlert {
     this.log_(console.log, this.textEl.textContent + '\n\n', ...txt);
   }
 
+  get() {
+    return this.textEl.textContent;
+  }
+
   show(...txt) {
     this.log_(() => {},    ...txt);
   }
