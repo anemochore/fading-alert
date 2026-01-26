@@ -56,7 +56,8 @@ class FadingAlert {
 
     if (txt.length === 0 || !txt[0]) {
       if (this.div.style.opacity == 1) this.fadeOut();
-    } else {
+    } 
+    else {
       this.textEl.textContent = txt.join(txt[0].endsWith('\n') ? '' : ' ');
       this.div.style.transition = '';
       this.div.style.opacity = 1;
@@ -70,7 +71,8 @@ class FadingAlert {
   }
 
   add(...txt) {
-    this.log_(console.log, this.textEl.textContent + '\n\n', ...txt);
+    if (this?.spinnerEl.textContent) this.log_(console.log, ...txt);  //ignore text of previous spin()
+    else this.log_(console.log, this.textEl.textContent + '\n\n', ...txt);
   }
 
   get() {
