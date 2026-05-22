@@ -36,7 +36,7 @@ Copy the contents of `src/fading-alert.js` and paste it directly into your code.
 
 ## 🚀 Usage
 
-Basic usage:
+Its id is `#alertBoxDiv`. Basic usage:
 
     const alert = new FadingAlert();
 
