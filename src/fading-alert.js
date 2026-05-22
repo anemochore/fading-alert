@@ -12,7 +12,7 @@ class FadingAlert {
 
       document.body.appendChild(this.div);
     }
-    
+
     this.textEl = this.div.querySelector('.fading-alert-text');
     if (!this.textEl) {
       this.textEl = document.createElement('span');
@@ -56,7 +56,7 @@ class FadingAlert {
 
     if (txt.length === 0 || !txt[0]) {
       if (this.div.style.opacity == 1) this.fadeOut();
-    } 
+    }
     else {
       this.textEl.textContent = txt.join(txt[0].endsWith('\n') ? '' : ' ');
       this.div.style.transition = '';
@@ -132,3 +132,5 @@ class FadingAlert {
     this.div.addEventListener('transitionend', onEnd, { once: true });
   }
 }
+
+globalThis.FadingAlert = FadingAlert;
